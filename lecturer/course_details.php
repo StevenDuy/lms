@@ -257,15 +257,14 @@ $exam_count = count(array_filter($materials, function($m) { return $m['material_
                                             <div class="ms-3">
                                                 <div class="btn-group">
                                                     <?php if ($material['material_type'] === 'pdf'): ?>
-                                                        <a href="grade_material.php?id=<?php echo $material['id']; ?>" class="btn btn-outline-primary btn-sm">
+                                                        <a href="grade_material.php?id=<?php echo $material['id']; ?>" class="btn btn-outline-primary btn-sm" title="Grade Material">
                                                             <i class="fas fa-clipboard-check"></i>
                                                         </a>
-                                                    <?php else: ?>
-                                                        <a href="edit_material.php?id=<?php echo $material['id']; ?>" class="btn btn-outline-primary btn-sm">
-                                                            <i class="fas fa-edit"></i>
-                                                        </a>
                                                     <?php endif; ?>
-                                                    <button type="button" class="btn btn-outline-danger btn-sm" onclick="confirmDelete(<?php echo $material['id']; ?>, '<?php echo htmlspecialchars($material['title']); ?>')">
+                                                    <a href="edit_material.php?id=<?php echo $material['id']; ?>" class="btn btn-outline-primary btn-sm" title="Edit Material">
+                                                        <i class="fas fa-edit"></i>
+                                                    </a>
+                                                    <button type="button" class="btn btn-outline-danger btn-sm" onclick="confirmDelete(<?php echo $material['id']; ?>, '<?php echo htmlspecialchars($material['title']); ?>')" title="Delete Material">
                                                         <i class="fas fa-trash"></i>
                                                     </button>
                                                 </div>
